@@ -1,0 +1,106 @@
+
+/* Main page */
+.create-ride-container {
+  max-width: 650px;
+  margin: 35px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.create-ride-container h2 {
+  margin-bottom: 25px;
+  color: #1e293b;
+  font-size: 27px;
+  text-align: center;
+}
+
+/* Form layout */
+.create-ride-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Labels */
+.create-ride-container label {
+  margin-top: 12px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Inputs and dropdowns */
+.create-ride-container input,
+.create-ride-container select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focus effect */
+.create-ride-container input:focus,
+.create-ride-container select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Create Ride button */
+.create-ride-container button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* Button hover */
+.create-ride-container button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Disabled button */
+.create-ride-container button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Success or error message */
+.create-ride-container p {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .create-ride-container {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .create-ride-container h2 {
+    font-size: 23px;
+  }
+}

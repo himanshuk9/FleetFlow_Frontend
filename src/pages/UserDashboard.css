@@ -1,0 +1,292 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.user-dashboard {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.user-navbar {
+  min-height: 76px;
+  padding: 14px 5%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e9f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.user-brand {
+  font-size: 27px;
+  font-weight: 800;
+  color: #172d55;
+}
+
+.user-brand span {
+  color: #e34c55;
+}
+
+.user-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.user-nav-links button {
+  border: none;
+  background: transparent;
+  padding: 11px 15px;
+  border-radius: 8px;
+  color: #4b5568;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.user-nav-links button:hover,
+.user-nav-links button.nav-active {
+  background: #edf2ff;
+  color: #2855b7;
+}
+
+.user-nav-links .user-logout-btn {
+  background: #fff0f0;
+  color: #d43838;
+}
+
+.user-nav-links .user-logout-btn:hover {
+  background: #ffe0e0;
+}
+
+.user-main-content {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 45px 25px;
+}
+
+.user-welcome {
+  min-height: 300px;
+  padding: 45px;
+  background: linear-gradient(120deg, #172d55, #315bb0);
+  border-radius: 18px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.user-eyebrow {
+  margin: 0 0 10px;
+  color: #7185ad;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.user-welcome .user-eyebrow {
+  color: #c5d5ff;
+}
+
+.user-welcome h1,
+.rides-heading h1 {
+  margin: 0 0 12px;
+  font-size: 32px;
+}
+
+.user-welcome > p:not(.user-eyebrow) {
+  color: #e0e8fb;
+  line-height: 1.7;
+}
+
+.explore-rides-btn,
+.back-dashboard-btn,
+.profile-done-btn {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.explore-rides-btn {
+  margin-top: 16px;
+  background: white;
+  color: #244a9b;
+}
+
+.user-rides-section {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(25, 45, 80, 0.05);
+}
+
+.rides-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.rides-heading h1 {
+  color: #172d55;
+}
+
+.rides-heading p:not(.user-eyebrow) {
+  color: #6b7280;
+}
+
+.back-dashboard-btn {
+  background: #edf2ff;
+  color: #2855b7;
+}
+
+/* Profile popup */
+
+.profile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.58);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+}
+
+.profile-popup {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  padding: 28px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.profile-popup-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.profile-popup-header h2 {
+  margin: 0;
+  color: #172d55;
+}
+
+.profile-close-btn {
+  border: none;
+  background: #f1f4f9;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.profile-avatar {
+  width: 76px;
+  height: 76px;
+  margin: 24px auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9efff;
+  color: #2855b7;
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.profile-display-name {
+  margin: 8px 0;
+  font-size: 21px;
+}
+
+.profile-display-email {
+  margin: 0 0 24px;
+  color: #6b7280;
+  overflow-wrap: anywhere;
+}
+
+.profile-details {
+  text-align: left;
+  border-top: 1px solid #e8ebf2;
+}
+
+.profile-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e8ebf2;
+}
+
+.profile-detail-row span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.profile-detail-row strong {
+  max-width: 65%;
+  text-align: right;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.profile-done-btn {
+  width: 100%;
+  margin-top: 22px;
+  background: #2855b7;
+  color: white;
+}
+
+.profile-done-btn:hover {
+  background: #1e438f;
+}
+
+@media (max-width: 650px) {
+  .user-navbar {
+    align-items: flex-start;
+  }
+
+  .user-nav-links {
+    width: 100%;
+  }
+
+  .user-nav-links button {
+    padding: 10px;
+  }
+
+  .user-main-content {
+    padding: 22px 14px;
+  }
+
+  .user-welcome {
+    padding: 28px 22px;
+  }
+
+  .user-welcome h1,
+  .rides-heading h1 {
+    font-size: 26px;
+  }
+
+  .user-rides-section {
+    padding: 18px 12px;
+  }
+}

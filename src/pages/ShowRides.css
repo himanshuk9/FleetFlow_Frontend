@@ -1,0 +1,230 @@
+
+.show-rides-page {
+  min-height: 100vh;
+  padding: 40px 6%;
+  background: #f5f7fb;
+  box-sizing: border-box;
+}
+
+.rides-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.rides-header h1 {
+  color: #172554;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.rides-header p {
+  color: #64748b;
+  font-size: 16px;
+}
+
+.rides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ride-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ride-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.1);
+}
+
+.ride-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.ride-label {
+  color: #1d4ed8;
+  background: #eff6ff;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ride-status {
+  color: #15803d;
+  background: #f0fdf4;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ride-title {
+  color: #0f172a;
+  font-size: 21px;
+  margin: 0 0 22px;
+  overflow-wrap: anywhere;
+}
+
+.ride-route {
+  margin-bottom: 24px;
+}
+
+.route-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.route-dot {
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.source-dot {
+  background: #2563eb;
+}
+
+.destination-dot {
+  background: #16a34a;
+}
+
+.route-line {
+  height: 22px;
+  border-left: 2px dashed #cbd5e1;
+  margin: 4px 0 4px 4px;
+}
+
+.route-point small {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.route-point p {
+  color: #334155;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.ride-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 12px;
+  padding: 18px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ride-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.ride-detail span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.ride-detail strong {
+  color: #1e293b;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.ride-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.ride-price {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ride-price small {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.ride-price strong {
+  color: #172554;
+  font-size: 24px;
+}
+
+.book-ride-btn {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 17px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.book-ride-btn:hover:not(:disabled) {
+  background: #1e40af;
+}
+
+.book-ride-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.rides-message {
+  text-align: center;
+  color: #64748b;
+  margin-top: 50px;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #dc2626;
+}
+
+@media (max-width: 600px) {
+  .show-rides-page {
+    padding: 28px 16px;
+  }
+
+  .rides-header h1 {
+    font-size: 26px;
+  }
+
+  .ride-card {
+    padding: 18px;
+  }
+
+  .ride-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .book-ride-btn {
+    width: 100%;
+  }
+}
