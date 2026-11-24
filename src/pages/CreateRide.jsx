@@ -36,7 +36,7 @@ function CreateRide() {
 
         const [usersResponse, vehiclesResponse] =
           await Promise.all([
-            axios.get(`${API_URL}/allusers`, config),
+            axios.get(`${API_URL}/drivers`, config),
             axios.get(`${API_URL}/vehicles`, config),
           ]);
 
