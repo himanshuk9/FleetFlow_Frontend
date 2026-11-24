@@ -15,6 +15,7 @@ import Login from "./pages/Login";
 import UserDashboard from "./pages/UserDashboard";
 import DriverDashboard from "./pages/DriverDashboard";
 import ShowRides from "./pages/ShowRides";
+import BookRide from "./pages/BookRide";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Admin" element={<Admin />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/book-ride" element={<BookRide/>} />
         <Route
           path="/UserDashboard"
           element={<UserDashboard />}

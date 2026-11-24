@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ShowRides from "./ShowRides";
+import MyBookings from "./MyBookings";
 import "./UserDashboard.css";
 
 function UserDashboard() {
@@ -29,6 +30,16 @@ function UserDashboard() {
     setActiveTab("rides");
   };
 
+  const openBookings = () => {
+    setShowProfile(false);
+    setActiveTab("bookings");
+  };
+
+  const openDashboard = () => {
+    setShowProfile(false);
+    setActiveTab("dashboard");
+  };
+
   return (
     <div className="user-dashboard">
       {/* Navbar */}
@@ -40,7 +51,7 @@ function UserDashboard() {
         <div className="user-nav-links">
           <button
             className={activeTab === "dashboard" ? "nav-active" : ""}
-            onClick={() => setActiveTab("dashboard")}
+            onClick={openDashboard}
           >
             Dashboard
           </button>
@@ -50,6 +61,13 @@ function UserDashboard() {
             onClick={openRides}
           >
             Available Rides
+          </button>
+
+          <button
+            className={activeTab === "bookings" ? "nav-active" : ""}
+            onClick={openBookings}
+          >
+            My Bookings
           </button>
 
           <button
@@ -69,6 +87,7 @@ function UserDashboard() {
 
       {/* Main Content */}
       <main className="user-main-content">
+        {/* Dashboard */}
         {activeTab === "dashboard" && (
           <section className="user-welcome">
             <p className="user-eyebrow">USER DASHBOARD</p>
@@ -78,18 +97,29 @@ function UserDashboard() {
             </h1>
 
             <p>
-              Manage your profile and explore available rides.
+              Manage your profile, explore available rides,
+              and track your bookings.
             </p>
 
-            <button
-              className="explore-rides-btn"
-              onClick={openRides}
-            >
-              Explore Rides
-            </button>
+            <div className="user-dashboard-actions">
+              <button
+                className="explore-rides-btn"
+                onClick={openRides}
+              >
+                Explore Rides
+              </button>
+
+              <button
+                className="explore-rides-btn"
+                onClick={openBookings}
+              >
+                My Bookings
+              </button>
+            </div>
           </section>
         )}
 
+        {/* Available Rides */}
         {activeTab === "rides" && (
           <section className="user-rides-section">
             <div className="rides-heading">
@@ -101,14 +131,37 @@ function UserDashboard() {
 
               <button
                 className="back-dashboard-btn"
-                onClick={() => setActiveTab("dashboard")}
+                onClick={openDashboard}
               >
                 Back to Dashboard
               </button>
             </div>
 
-            {/* Existing rides component */}
             <ShowRides />
+          </section>
+        )}
+
+        {/* My Bookings */}
+        {activeTab === "bookings" && (
+          <section className="user-rides-section">
+            <div className="rides-heading">
+              <div>
+                <p className="user-eyebrow">YOUR JOURNEYS</p>
+                <h1>My Bookings</h1>
+                <p>
+                  View the rides you have booked with FleetFlow.
+                </p>
+              </div>
+
+              <button
+                className="back-dashboard-btn"
+                onClick={openDashboard}
+              >
+                Back to Dashboard
+              </button>
+            </div>
+
+            <MyBookings />
           </section>
         )}
       </main>
