@@ -9,6 +9,7 @@ import ShowRides from "./ShowRides";
 import Vehicles from "./Vehicles";
 import Drivers from "./Drivers";
 import ManageBookings from "./ManageBookings";
+import ManageRoutes from "./ManageRoutes";
 
 function Admin() {
   const API_URL = "http://127.0.0.1:8000";
@@ -109,6 +110,7 @@ function Admin() {
     { id: "dashboard", label: "Overview", icon: "▦" },
     { id: "create", label: "Create Ride", icon: "+" },
     { id: "rides", label: "Manage Rides", icon: "↗" },
+    { id: "routes", label: "Manage Routes", icon: "↔" },
     { id: "vehicles", label: "Manage Vehicles", icon: "🚘" },
     { id: "drivers", label: "Manage Drivers", icon: "♙" },
     { id: "bookings", label: "Manage Bookings", icon: "▤" },
@@ -179,6 +181,7 @@ function Admin() {
               onClick={() => {
                 setMessage("");
                 setError("");
+                setLoading(true);
                 allusers();
               }}
             >
@@ -327,6 +330,13 @@ function Admin() {
                       style: "action-green",
                     },
                     {
+                      id: "routes",
+                      symbol: "↔",
+                      title: "Manage routes",
+                      description: "View and manage routes",
+                      style: "action-blue",
+                    },
+                    {
                       id: "vehicles",
                       symbol: "🚘",
                       title: "Manage vehicles",
@@ -404,6 +414,21 @@ function Admin() {
               </div>
               <div className="workspace-panel rides-workspace">
                 <ShowRides />
+              </div>
+            </section>
+          )}
+
+          {/* MANAGE ROUTES */}
+          {activeTab === "routes" && (
+            <section className="workspace-section">
+              <div className="section-heading">
+                <div>
+                  <h2>Manage Routes</h2>
+                  <p>View and manage your available routes.</p>
+                </div>
+              </div>
+              <div className="workspace-panel">
+                <ManageRoutes />
               </div>
             </section>
           )}
